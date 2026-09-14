@@ -88,18 +88,21 @@ body{
 }
 .step-title{font-family:var(--display);font-size:1.15rem;font-weight:700;line-height:1.4}
 .step-note{font-size:.82rem;color:var(--muted);line-height:1.6;margin-top:.2rem!important}
-.step-row{display:grid;grid-template-columns:1fr auto;gap:.8rem;align-items:stretch}
-.qr{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;
-  background:var(--card);border:2px solid var(--sub-soft);border-radius:1.2rem;
-  padding:.8rem .9rem;
+/* --- QRページ（投影用） --- */
+body.qr-page{min-height:100vh;display:flex;flex-direction:column}
+.qr-wrap{
+  max-width:none;
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1.5rem;padding:2rem 1.25rem 3rem;
 }
-.qr img{width:7rem;height:7rem;display:block}
-.qr p{margin:0;font-size:.68rem;line-height:1.5;color:var(--muted);text-align:center}
-@media (max-width:420px){
-  .step-row{grid-template-columns:1fr}
-  .qr{flex-direction:row;justify-content:flex-start;gap:.9rem}
-  .qr p{text-align:left;font-size:.78rem}
+.qr-big{
+  width:min(70vh,90vw,32rem);height:auto;display:block;
+  background:#fff;border:2px solid var(--main-soft);border-radius:1.5rem;padding:1rem;
+}
+.qr-url{
+  margin:0;font-family:var(--display);font-weight:700;
+  font-size:clamp(1rem,2.6vw,1.8rem);color:var(--main-deep);
+  text-align:center;overflow-wrap:anywhere;
 }
 .staff{font-size:.75rem;color:var(--muted);margin-top:1rem}
 .staff a{color:var(--sub-deep)}

@@ -7,11 +7,13 @@ const NAV_ITEMS = [
   { id:"1",   label:"はじめに",   href:"index.html#/1", step:"1" },
   { id:"3",   label:"ペアワーク", href:"index.html#/3", step:"2" },
   { id:"2",   label:"おわりに",   href:"index.html#/2", step:"3" },
-  { id:"prompts", label:"プロンプト集", href:"prompts.html" }
+  { id:"prompts", label:"プロンプト集", href:"prompts.html" },
+  { id:"qr", label:"QR", href:"qr.html" }
 ];
 
 function currentNavId(){
   if(/prompts\.html$/.test(location.pathname)) return "prompts";
+  if(/qr\.html$/.test(location.pathname)) return "qr";
   const m = location.hash.match(/^#\/([123])/);
   return m ? m[1] : "top";
 }

@@ -193,20 +193,14 @@ function renderMenu(){
             <p class="step-note">${s.note}</p>
           </div>
         </a>`).join("")}
-      <div class="step-row">
-        <a class="step step-sub" href="prompts.html">
-          <div class="step-icon">${ICONS.write}</div>
-          <div class="step-body">
-            <p class="step-when">いつでも</p>
-            <p class="step-title">今日のプロンプト集</p>
-            <p class="step-note">AIへの頼み方をまとめています。持ち帰り用です</p>
-          </div>
-        </a>
-        <div class="qr">
-          <img src="qr.svg" alt="このページのQRコード" width="120" height="120">
-          <p>このページのQR<br>隣の人に見せてください</p>
+      <a class="step step-sub" href="prompts.html">
+        <div class="step-icon">${ICONS.write}</div>
+        <div class="step-body">
+          <p class="step-when">いつでも</p>
+          <p class="step-title">今日のプロンプト集</p>
+          <p class="step-note">AIへの頼み方をまとめています。持ち帰り用です</p>
         </div>
-      </div>
+      </a>
     </nav>
 
     <p class="warn">本名・住所・電話番号・お客様の情報は入力しないでください。ニックネームで大丈夫です。</p>
