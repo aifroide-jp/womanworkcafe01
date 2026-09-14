@@ -205,7 +205,7 @@ function renderMenu(){
 
     <p class="warn">本名・住所・電話番号・お客様の情報は入力しないでください。ニックネームで大丈夫です。</p>
     ${footHTML()}
-    <p class="staff">講師用：<a href="wall.html?s=1">冒頭の集計</a>・<a href="wall.html?s=3">コピーの壁</a>・<a href="wall.html?s=2">宣言の壁</a></p>`;
+    <p class="staff">みんなの投稿：<a href="wall.html?s=1">1 はじめに</a>・<a href="wall.html?s=3">2 ペアワーク</a>・<a href="wall.html?s=2">3 おわりに</a></p>`;
 }
 
 function footHTML(){
