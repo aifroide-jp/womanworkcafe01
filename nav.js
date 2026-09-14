@@ -28,7 +28,7 @@ function renderNav(){
     const main = document.querySelector("main");
     main.parentNode.insertBefore(nav, main);
   }
-  // スマホでは進行順の3つを1段目、それ以外を2段目に折り返す（gnav-break が区切り）
+  // スマホでは「トップ・プロンプト集・QR」を1段目、進行順の3つを2段目に折り返す（gnav-break が区切り）
   nav.innerHTML = `<div class="gnav-in">` + NAV_ITEMS.map(n => `
     <a href="${n.href}" class="${n.id === cur ? "is-current" : ""}"${n.group ? ` data-group="${n.group}"` : ""}${n.id === cur ? ' aria-current="page"' : ""}>
       ${n.step ? `<span class="gnav-step">${n.step}</span>` : ""}${n.label}
