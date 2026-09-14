@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>みんなの画面｜わたしのペースではじめる生成AI</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="wall">
+<main class="wrap wall-wrap" id="wall"></main>
+<script src="config.js"></script>
+<script src="icons.js"></script>
+<script>
+const TITLES = {
+  s1:{ h:"AIに、まず何を頼んでみたい？", s:"みなさんが選んだ「面倒だな」から" },
+  s2:{ h:"明日、これに使う",             s:"それぞれの、ひとつだけ" },
+  s3:{ h:"贈るコピー",                   s:"あの人からあの人へ" }
+};
+const key = (new URLSearchParams(location.search).get("s") || "1");
+const sheet = "s" + key;
+const meta = TITLES[sheet] || TITLES.s1;
+const wall = document.getElementById("wall");
+let items = [];
+
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+
+function draw(){
+  const bars = sheet === "s1" ? barsHTML() : "";
+  const cards = items.length
+    ? `<div class="wall-grid">${items.map(cardHTML).join("")}</div>`
+    : `<p class="wall-empty">まだ1枚もありません。できた人から、ここに出てきます。</p>`;
+  wall.innerHTML = `
+    <div class="wall-head">
+      <div><h1>${meta.h}</h1><p>${meta.s}</p></div>
+      <div class="wall-count">${items.length}<span>枚</span></div>
+    </div>
+    ${bars}${cards}
+    <p class="wall-foot">2026.9.15　COMPASS小倉　主催 ウーマンワークカフェ北九州
+      <span class="wall-nav">
+        <a href="wall.html?s=1"${sheet==="s1"?' class="is-current"':""}>冒頭の集計</a>
+        <a href="wall.html?s=3"${sheet==="s3"?' class="is-current"':""}>コピーの壁</a>
+        <a href="wall.html?s=2"${sheet==="s2"?' class="is-current"':""}>宣言の壁</a>
+        <a href="index.html">参加者ページ</a>
+      </span></p>`;
+}
+
+function barsHTML(){
+  const c = {};
+  items.forEach(i => { c[i.title] = (c[i.title]||0) + 1; });
+  const list = Object.entries(c).sort((a,b) => b[1]-a[1]);
+  if(!list.length) return "";
+  const max = list[0][1];
+  return `<div class="bars">${list.map(([k,v]) => `
+    <div class="bar">
+      <span>${esc(k)}</span>
+      <div class="bar-track"><div class="bar-fill" style="width:${Math.round(v/max*100)}%"></div></div>
+      <span>${v}</span>
+    </div>`).join("")}</div>`;
+}
+
+function cardHTML(i){
+  const ic = sheet === "s3" ? ICONS.gift : ICONS[TITLE_ICON[i.title]];
+  return `<div class="note">
+    ${ic ? `<div class="note-icon">${ic}</div>` : ""}
+    <div>
+      <p class="note-name">${esc(i.nickname)}</p>
+      <p class="note-title">${esc(i.title)}</p>
+      ${i.body ? `<p class="note-body">${esc(i.body)}</p>` : ""}
+    </div>
+  </div>`;
+}
+
+function load(){
+  if(!window.API_URL){
+    wall.innerHTML = `<p class="wall-empty">config.js に GAS の URL が入っていません。<br>
+      設定すると、ここにみんなの結果が並びます。</p>`;
+    return;
+  }
+  fetch(window.API_URL + "?action=list&screen=" + sheet + "&t=" + Date.now())
+    .then(r => r.json())
+    .then(j => { if(j && j.ok){ items = j.items || []; draw(); } })
+    .catch(() => {
+      if(!items.length) wall.innerHTML = `<p class="wall-empty">いま通信が届いていません。数秒後にもう一度つなぎます。</p>`;
+    });
+}
+
+draw(); load(); setInterval(load, 5000);
+</script>
+</body>
+</html>

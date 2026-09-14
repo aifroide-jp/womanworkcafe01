@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>今日のプロンプト集｜わたしのペースではじめる生成AI</title>
+<meta name="theme-color" content="#FFFFFF">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+
+  <p class="eyebrow">わたしのペースではじめる生成AI</p>
+  <h1>今日のプロンプト集</h1>
+  <p class="lede">AIへの「頼み方」をまとめました。打たなくて大丈夫です。ボタンでコピーして、貼り付けてください。色が変わっている部分だけ、自分の言葉に変えます。</p>
+  <p class="warn">本名・住所・電話番号・お客様の情報は入力しないでください。ニックネームや「〇〇をしたい人」で、ぜんぶ話せます。</p>
+
+  <section class="p-sec">
+    <h2>いつでも足せる、ひとこと</h2>
+    <p>頼みごとの最後に付け足すだけ。AIが勝手な前提で埋めるのをやめて、足りないことを先に聞いてくれます。</p>
+
+    <div class="p-item">
+      <p class="p-when"><span>＋</span><b>知ったかぶりを防ぐ</b></p>
+      <p class="p-text" id="p0">不足情報があれば回答せず、優先順位の高い順に選択肢か回答例を添えて全て質問してください。揃うまで回答不要です。</p>
+      <button class="p-copy" data-t="p0">コピーする</button>
+      <p class="p-tip">これを付けると、答えの精度が変わります。長い相談ほど効きます。</p>
+    </div>
+  </section>
+
+  <section class="p-sec">
+    <h2>今日、順番に使います</h2>
+    <p>講師の合図で、上から順に使います。先に進んでも大丈夫です。</p>
+
+    <div class="p-item">
+      <p class="p-when"><span>1</span><b>まずは1回、話しかける</b></p>
+      <p class="p-text" id="p1">私は<i class="p-mark">〇〇</i>が好きで、<i class="p-mark">△△</i>をしています。私の良いところを見つけて褒めてください</p>
+      <button class="p-copy" data-t="p1">コピーする</button>
+      <p class="p-tip">例）私は料理が好きで、家族や友人に料理を作ることがあります。私の良いところを見つけて褒めてください</p>
+    </div>
+
+    <div class="p-item">
+      <p class="p-when"><span>2</span><b>逆インタビュー</b></p>
+      <p class="p-text" id="p2">私が起業を考えています。質問を1つずつして、私の強みを見つけてください。私が答えたら、次の質問をしてください</p>
+      <button class="p-copy" data-t="p2">コピーする</button>
+      <p class="p-tip">送るとAIから質問が来ます。短くてOK、「わからない」もOK。3往復くらいで「強みをまとめて」と言って締めてください。</p>
+    </div>
+
+    <div class="p-item">
+      <p class="p-when"><span>3</span><b>出てきた答えを、直す</b></p>
+      <p class="p-text" id="p3">もっと起業に活かせる形でまとめて</p>
+      <button class="p-copy" data-t="p3">コピーする</button>
+      <p class="p-text" id="p4" style="margin-top:.9rem">専門用語を使わず、親しみやすくして</p>
+      <button class="p-copy" data-t="p4">コピーする</button>
+      <p class="p-tip">1つめを送ってから、2つめを送ります。やり直しは何度でも頼めます。</p>
+    </div>
+
+    <div class="p-item">
+      <p class="p-when"><span>4</span><b>キャッチコピーを贈る</b></p>
+      <p class="p-text" id="p5">私の友人は<i class="p-mark">〇〇</i>をしたい人です。話を聞いたメモを渡します。この人のキャッチコピーを3つ作ってください：
+<i class="p-mark">（メモ）</i></p>
+      <button class="p-copy" data-t="p5">コピーする</button>
+      <p class="p-tip">メモは箇条書きで大丈夫です。例）・子ども向けのお菓子教室をしたい　・料理が好き　・人に教えるのが好き　・自宅の一室を使いたい</p>
+    </div>
+  </section>
+
+  <section class="p-sec">
+    <h2>暮らしでも、こんなふうに</h2>
+    <p>写真を撮って送るだけ、という使い方です。帰ってから試してみてください。</p>
+
+    <div class="p-item">
+      <p class="p-when"><span>・</span><b>冷蔵庫の写真から、献立</b></p>
+      <p class="p-text" id="p6">この材料で3日分の夕食を考えて</p>
+      <button class="p-copy" data-t="p6">コピーする</button>
+      <p class="p-tip">冷蔵庫の中を1枚撮って、写真といっしょに送ります。</p>
+    </div>
+
+    <div class="p-item">
+      <p class="p-when"><span>・</span><b>手書きメモを、整理</b></p>
+      <p class="p-text" id="p7">このメモをカテゴリ別に整理して</p>
+      <button class="p-copy" data-t="p7">コピーする</button>
+      <p class="p-tip">ぐちゃぐちゃのメモでも読み取ってくれます。</p>
+    </div>
+
+    <div class="p-item">
+      <p class="p-when"><span>・</span><b>もらった時間割を、予定に</b></p>
+      <p class="p-text" id="p8">この予定を曜日ごとに整理して</p>
+      <button class="p-copy" data-t="p8">コピーする</button>
+      <p class="p-tip">学校や習い事のプリントで試すと、違いがよくわかります。</p>
+    </div>
+  </section>
+
+  <section class="p-sec">
+    <h2>おうちで、声で使う</h2>
+    <p>打つのが大変なときは、話しかけて頼めます。今日は会場ではやりません。</p>
+
+    <div class="p-item">
+      <p class="p-when"><span>声</span><b>声で「打つ」（音声入力）</b></p>
+      <ol class="p-steps">
+        <li>入力する場所のそばの「マイク」マークをタップ</li>
+        <li>ふだんの言葉で話す（例：明日の朝ごはんのアイデアを3つ教えて）</li>
+        <li>文字になるので、確認して送信</li>
+      </ol>
+      <p class="p-tip">打つより速く、言い間違えても送る前に直せます。</p>
+    </div>
+
+    <div class="p-item">
+      <p class="p-when"><span>声</span><b>声で「会話する」（音声モード）</b></p>
+      <ol class="p-steps">
+        <li>入力する場所のそばの「波の形」マークをタップ</li>
+        <li>話しかけると、AIが声で返事をする（例：今夜の夕飯、いっしょに考えて）</li>
+        <li>終わるときは「×」をタップ</li>
+      </ol>
+      <p class="p-tip">はじめに「マイクの使用を許可しますか」と出たら「許可」を選んでください。</p>
+    </div>
+  </section>
+
+  <section class="p-sec">
+    <h2>忘れないでほしい3つ</h2>
+    <div class="p-item">
+      <ol class="p-steps">
+        <li>背景から伝える。「いい感じにやって」ではなく、誰のため・何のためから話す</li>
+        <li>やり直しは何度でも頼める。1回目の出来で判断しない</li>
+        <li>最終チェックは、あなた。自信満々に間違えることがあります</li>
+      </ol>
+    </div>
+  </section>
+
+  <nav class="menu">
+    <a href="index.html"><b>トップに戻る</b><span>ワークシートの一覧へ</span></a>
+  </nav>
+
+  <p class="foot">2026.9.15　COMPASS小倉<br>主催　ウーマンワークカフェ北九州<br>
+  このページは保存もできます。ブラウザの共有ボタンから「ブックマーク」や「ホーム画面に追加」をどうぞ。</p>
+</main>
+
+<script src="nav.js"></script>
+<script>
+document.querySelectorAll(".p-copy").forEach(function(b){
+  b.addEventListener("click", function(){
+    var el = document.getElementById(b.dataset.t);
+    var t = el.innerText;
+    function done(){
+      b.textContent = "コピーしました";
+      b.classList.add("done");
+      setTimeout(function(){ b.textContent = "コピーする"; b.classList.remove("done"); }, 2200);
+    }
+    function fallback(){
+      var ta = document.createElement("textarea");
+      ta.value = t; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); }
+      catch(e){ b.textContent = "長押しでコピーしてください"; }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(t).then(done, fallback);
+    } else { fallback(); }
+  });
+});
+</script>
+</body>
+</html>
