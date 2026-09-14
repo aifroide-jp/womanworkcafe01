@@ -345,7 +345,7 @@ function showResult(){
   const cp = document.getElementById("copyPrompt");
   if(cp) cp.addEventListener("click", () => copyText(r.prompt));
   document.getElementById("again").addEventListener("click", () => { route(); });
-  box.scrollIntoView({behavior:"smooth", block:"start"});
+  box.scrollIntoView({block:"start"});
 }
 
 function copyText(t){
@@ -396,4 +396,12 @@ function esc(s){
 }
 
 window.addEventListener("hashchange", route);
+// 今いる画面のナビを押したときは、最初から入力し直せるようにする
+document.addEventListener("click", e => {
+  const a = e.target.closest(".gnav a");
+  if(a && a.hash && a.hash === location.hash && a.pathname === location.pathname){
+    e.preventDefault();
+    route();
+  }
+});
 route();

@@ -236,7 +236,8 @@ textarea{min-height:5.5rem;resize:vertical}
 }
 
 /* --- 結果カード --- */
-.result{margin-top:2rem}
+.result{margin-top:2rem;scroll-margin-top:4.5rem}
+.q{scroll-margin-top:4.5rem}
 .poster{
   background:var(--card);
   border:2px solid var(--main-soft);
