@@ -221,6 +221,9 @@ textarea{min-height:5.5rem;resize:vertical}
 .sub{
   display:block;
   width:100%;
+  text-align:center;
+  text-decoration:none;
+  box-sizing:border-box;
   font-family:inherit;
   font-size:.95rem;
   color:var(--sub-deep);
@@ -386,6 +389,19 @@ body.wall{background:var(--paper);color:var(--ink)}
 .wall-nav a{color:var(--sub-deep);text-decoration:none;background:var(--sub-soft);border-radius:2rem;padding:.25rem .7rem}
 .wall-nav a.is-current{background:var(--main);color:#fff}
 
+/* 壁：スマホ表示 */
+@media (max-width:600px){
+  .wall-wrap{padding:1rem 1rem 2rem}
+  .wall-head{gap:1rem;margin-bottom:1rem}
+  .wall-head h1{font-size:1.45rem}
+  .wall-head p{font-size:.82rem}
+  .wall-count{font-size:2rem}
+  .bar{grid-template-columns:7.5rem 1fr auto;gap:.6rem;font-size:.85rem}
+  .bar-track{height:1.2rem}
+  .wall-grid{grid-template-columns:1fr;gap:.7rem}
+  .wall-foot{flex-direction:column;align-items:flex-start;gap:.6rem}
+  .wall-nav{flex-wrap:wrap}
+}
 @media (max-width:420px){
   h1{font-size:1.7rem}
   .poster-title{font-size:1.75rem}

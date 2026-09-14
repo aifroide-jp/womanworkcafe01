@@ -339,6 +339,7 @@ function showResult(){
         <button class="sub" id="copyPrompt">AIへの頼み方をコピーする</button>
       </div>` : ""}
     <button class="sub" id="again">やり直す</button>
+    <a class="sub sub-link" href="wall.html?s=${screen.key.slice(1)}">みんなの投稿を見る</a>
     <div id="netnote"></div>`;
 
   const cp = document.getElementById("copyPrompt");
