@@ -26,7 +26,7 @@ window.API_URL = "https://script.google.com/macros/s/..../exec";
 
 ## 3. GitHub Pagesに上げる
 
-リポジトリに `index.html` `prompts.html` `wall.html` `style.css` `app.js` `icons.js` `nav.js` `config.js` を置き、
+リポジトリに `index.html` `prompts.html` `wall.html` `style.css` `app.js` `icons.js` `nav.js` `config.js` `qr.svg` を置き、
 Settings → Pages → Branch: main / root → Save。
 
 ## 4. QRを3枚つくる

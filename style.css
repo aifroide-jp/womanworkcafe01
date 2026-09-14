@@ -88,6 +88,19 @@ body{
 }
 .step-title{font-family:var(--display);font-size:1.15rem;font-weight:700;line-height:1.4}
 .step-note{font-size:.82rem;color:var(--muted);line-height:1.6;margin-top:.2rem!important}
+.step-row{display:grid;grid-template-columns:1fr auto;gap:.8rem;align-items:stretch}
+.qr{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;
+  background:var(--card);border:2px solid var(--sub-soft);border-radius:1.2rem;
+  padding:.8rem .9rem;
+}
+.qr img{width:7rem;height:7rem;display:block}
+.qr p{margin:0;font-size:.68rem;line-height:1.5;color:var(--muted);text-align:center}
+@media (max-width:420px){
+  .step-row{grid-template-columns:1fr}
+  .qr{flex-direction:row;justify-content:flex-start;gap:.9rem}
+  .qr p{text-align:left;font-size:.78rem}
+}
 .staff{font-size:.75rem;color:var(--muted);margin-top:1rem}
 .staff a{color:var(--sub-deep)}
 
