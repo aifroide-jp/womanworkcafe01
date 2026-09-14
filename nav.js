@@ -3,12 +3,12 @@
    進行順（はじめに → ペアワーク → おわりに）で並べる。 */
 
 const NAV_ITEMS = [
-  { id:"top", label:"トップ",     href:"index.html" },
+  { id:"top", label:"トップ",     href:"index.html", group:"util" },
   { id:"1",   label:"はじめに",   href:"index.html#/1", step:"1" },
   { id:"3",   label:"ペアワーク", href:"index.html#/3", step:"2" },
   { id:"2",   label:"おわりに",   href:"index.html#/2", step:"3" },
-  { id:"prompts", label:"プロンプト集", href:"prompts.html" },
-  { id:"qr", label:"QR", href:"qr.html" }
+  { id:"prompts", label:"プロンプト集", href:"prompts.html", group:"util" },
+  { id:"qr", label:"QR", href:"qr.html", group:"util" }
 ];
 
 function currentNavId(){
@@ -28,10 +28,11 @@ function renderNav(){
     const main = document.querySelector("main");
     main.parentNode.insertBefore(nav, main);
   }
+  // スマホでは進行順の3つを1段目、それ以外を2段目に折り返す（gnav-break が区切り）
   nav.innerHTML = `<div class="gnav-in">` + NAV_ITEMS.map(n => `
-    <a href="${n.href}" class="${n.id === cur ? "is-current" : ""}"${n.id === cur ? ' aria-current="page"' : ""}>
+    <a href="${n.href}" class="${n.id === cur ? "is-current" : ""}"${n.group ? ` data-group="${n.group}"` : ""}${n.id === cur ? ' aria-current="page"' : ""}>
       ${n.step ? `<span class="gnav-step">${n.step}</span>` : ""}${n.label}
-    </a>`).join("") + `</div>`;
+    </a>`).join("") + `<span class="gnav-break" aria-hidden="true"></span></div>`;
   const c = nav.querySelector(".is-current");
   if(c) c.scrollIntoView({ block:"nearest", inline:"center" });
 }
