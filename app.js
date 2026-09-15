@@ -179,7 +179,10 @@ function renderMenu(){
   app.innerHTML = `
     <section class="hero">
       <p class="eyebrow">${EVENT.date}　${EVENT.place}</p>
-      <h1>わたしのペースで<br>はじめる生成AI</h1>
+      <h1 class="hero-title">
+        <span class="hero-title-top"><span class="hero-spark" aria-hidden="true">✦</span>わたしのペースで</span>
+        <span class="hero-title-main">はじめる<em class="hero-marker">生成AI</em></span>
+      </h1>
       <p class="lede">今日のワークシートです。講師の合図で、その回のものを開いてください。上のメニューからも切り替えられます。</p>
     </section>
 
